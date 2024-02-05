@@ -1,0 +1,85 @@
+
+<div class="bg-img">
+<!-- <header id = "header-background"></header> -->
+<div class="mt-5">
+<mat-card>
+  <mat-card-content>
+    <div class="header">
+      <h2><B>LOGIN</B></h2>
+    </div>
+    <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
+      <div class="emailInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            formControlName="email"
+            matInput
+            placeholder="Enter email address"
+            required
+            [(ngModel)]="userData.email"
+          />
+          <mat-error *ngIf="!loginForm.controls['email'].valid">
+            Email is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+          appearance="outline"
+            formControlName="password"
+            matInput
+            [(ngModel)]="userData.password"
+            [type]="hide ? 'text' : 'password'"
+            required
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide Password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>
+              {{ hide ? "visibility" : "visibility_off" }}
+            </mat-icon>
+          </button>
+          <mat-error *ngIf="!loginForm.controls['password'].valid">
+            Password is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <span *ngIf="this.errorMsg">
+          <p class="text-danger" [innerText]="this.errorMsg"></p>
+        </span>
+        <button
+          mat-raised-button
+          type="submit"
+          color="primary"
+          [disabled]="!loginForm.valid"
+          (click)="login()"
+        >
+          Sign In
+        </button>
+      </div>
+    </form>
+
+    <div class="button-row">
+      <p>
+        Don't have an account?
+        <button
+          mat-raised-button
+          type="submit"
+          color="warn"
+          (click)="gotoreg()">
+          Register now
+        </button>
+      </p>
+    </div>
+  </mat-card-content>
+</mat-card>
+</div>
+</div>

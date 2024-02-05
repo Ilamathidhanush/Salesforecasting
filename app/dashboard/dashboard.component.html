@@ -1,0 +1,71 @@
+ <app-navbar>
+ </app-navbar>
+
+ <div class="bg-img">
+
+ <div class="main">
+<div class="container">
+  <div class="text-center mt-5">
+
+<mat-card>
+  <mat-card-content>
+    <form #myForm="ngForm"  enctype="multipart/form-data" (ngSubmit)="onSubmit(myForm)">
+      <div class="form-group">
+       <h2> <label for="fileInput">Upload CSV/Excel File:</label><br></h2>
+    
+        <input type="file" class="form-control-file" id="fileInput" name="fileInput" required accept=".csv,text/csv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" (change)="onFileSelected($event)">
+      </div><br>
+      <div class="form-group">
+        <h2><label for="periodicity">Periodicity:</label></h2>  
+        <select class="form-control" id="periodicity" name="periodicity" required [(ngModel)]="data.periodicity">
+          <option value="day">Day</option>
+          <option value="week">Week</option>
+          <option value="month">Month</option>
+          <option value="year">Year</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <h2><label for="periods">Number of Periods:</label></h2>
+        <input type="number" class="form-control" min="1" oninput="validity.valid||(value='');" onkeydown="if(event.key==='-') event.preventDefault();" id="periods" name="periods" required [(ngModel)]="data.periods">
+      </div><BR>
+        <div class="text-center">
+          <button
+          mat-raised-button
+          type="submit"
+          color="accent">
+          Predict
+        </button>
+       
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+<br><br>
+
+    <img hidden alt="Base Encoded Image" id="result">
+ 
+
+  </div>
+</div>
+</div>
+
+
+ 
+
+
+<div class="float">
+  <button type="button" class="btn btn-sm" onClick="window.location.reload();">
+    <i class="fa fa-refresh my-float"></i>
+  </button>
+</div> 
+
+
+ </div>
+
+
+
+
+
+
+
+

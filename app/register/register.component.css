@@ -1,0 +1,100 @@
+.text-danger {
+  color: #dc3545;
+}
+
+.text-danger:hover {
+  color: #a71d2a;
+}
+
+.text-danger:focus {
+  color: #a71d2a;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+.text-danger:active {
+  color: #7f1d2a;
+}
+
+.text-danger.disabled,
+.text-danger:disabled {
+  color: #6c757d;
+}
+
+.text-danger:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+
+mat-card {
+  max-width: 600px;
+  margin: 2em auto;
+  text-align: center;
+  max-height: 600px;
+ opacity: 0.8;
+}
+
+.header{
+  text-align: center;
+
+}
+.full-width {
+  width: 80%;
+}
+
+.button-row {
+  padding-top: 5px;
+}
+
+.button-row a {
+  margin-right: 8px;
+  text-align: center;
+}
+
+.forget-password{
+  padding-left: 0px;
+}
+
+.emailInput{
+  padding-top: 10px;
+}
+
+.contentBody {
+  padding: 60px 1rem;
+  background :#1b6ca8;
+  display: block;
+}
+
+.aLink{
+  float: right;
+  padding-right: 60px;
+  text-decoration: none;
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+input[type="password"]::-webkit-contacts-auto-fill-button,
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  display: none;
+}
+
+input[type="password"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+
+.bg-img{
+min-height: 150vh;
+ width: 105%;
+
+ background: url('../../../src/assets/bf.webp') no-repeat center center fixed;
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+ position: absolute;
+ }
+ 

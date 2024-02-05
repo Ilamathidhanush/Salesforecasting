@@ -1,0 +1,97 @@
+
+<div class="bg-img">
+<div class="mt-5">
+<mat-card style>
+  <mat-card-content>
+    <div class="header">
+      <h2><B>SIGN UP</B></h2>
+    </div>
+    <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
+      <div class="emailInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            formControlName="email"
+            matInput
+            placeholder="Enter email address"
+            required
+            [(ngModel)]="userData.email"
+          />
+          <mat-error *ngIf="!loginForm.controls['email'].valid">
+            Email is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Username</mat-label>
+          <input
+            formControlName="Username"
+            matInput
+            [(ngModel)]="userData.name"
+            placeholder="Enter the Username"
+            required
+          />
+          <mat-error *ngIf="!loginForm.controls['Username'].valid">
+            Username is requiured
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            formControlName="password"
+            matInput
+            [type]="hide ? 'text' : 'password'"
+            required
+            [(ngModel)]="userData.password"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide Password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>
+              {{ hide ? "visibility" : "visibility_off" }}
+            </mat-icon>
+          </button>
+          <mat-error *ngIf="!loginForm.controls['password'].valid">
+            Password is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <span *ngIf="this.errorMsg">
+          <p class="text-danger" [innerText]="this.errorMsg"></p>
+        </span>
+        <button
+        mat-raised-button
+        type="submit"
+        color="primary"
+        [disabled]="!loginForm.valid"
+        (click)="registerUser()"
+      >
+        Sign In
+      </button>
+      </div>
+    </form>
+    <div class="button-row">
+      <p>
+        Already have an account?
+        <button
+          mat-raised-button
+          type="submit"
+          color="primary"
+          (click)="gotolog()"
+        >
+          Log in
+        </button>
+      </p>
+    </div>
+  </mat-card-content>
+</mat-card>
+</div>
+</div>

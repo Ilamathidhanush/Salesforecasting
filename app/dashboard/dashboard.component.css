@@ -1,0 +1,45 @@
+.centre-cont{
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:20px;
+}
+
+
+
+mat-card {
+  max-width: 600px;
+  margin: 2em auto;
+  text-align: center;
+  max-height: 600px;
+ opacity: 0.9;
+}
+
+
+
+.bg-img{
+	 min-height: 100vh;
+   width: 105%;
+   position: absolute;
+   background: url('../../../src/assets/graphs.jpg') no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   } 
